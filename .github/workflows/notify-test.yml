@@ -1,0 +1,14 @@
+name: Notify Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fail-on-purpose:
+    name: Fail on purpose (email test)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Intentional failure
+        run: |
+          echo "This is an intentional failure to verify the failure email notification."
+          exit 1
